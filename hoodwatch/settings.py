@@ -23,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wregtuihlkjljkhbk'
+SECRET_KEY = 'werewagargszegzgsr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =[
+ALLOWED_HOSTS = [
     '*'
 ]
 
@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'pyuploadcare.dj',
 ]
 UPLOADCARE = {
-    PUB_KEY='0fe8c59ceb318d246c4d'
-    SECRET='2b04398f86bf81d225bc'
+    'pub_key': '0fe8c59ceb318d246c4d',
+    'secret': '2b04398f86bf81d225bc',
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -85,24 +85,15 @@ WSGI_APPLICATION = 'hoodwatch.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USER'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST'),
-#         'PORT': os.environ.get('DB_PORT'),
-#     },
-# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'hoodwatch' ,
-        'USER': 'postgres',
-        'PASSWORD': 'azbycx567',
-        'HOST': localhost,
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     },
 }
 
@@ -154,4 +145,3 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'index'
-
